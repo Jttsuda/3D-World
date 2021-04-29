@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Mm]emoryCaptures/
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
@@ -58,3 +58,164 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+*.meta
+*.anim
+*.fbx
+*.mat
+*.controller
+*.terrainlayer
+*.prefab
+3DWorld/Assets/LowPolyTools/Readme.txt
+*.jpg
+*.asset
+*.png
+*.lighting
+*.mixer
+*.unity
+*.tga
+3DWorld/.vsconfig
+*.shader
+*.tif
+*.physicsMaterial2D
+*.txt
+*.wav
+*.psd
+*.flare
+*.spm
+*.bmp
+*.cginc
+*.ttf
+*.physicmaterial
+*.preset
+*.brush
+*.tiff
+*.raw
+*.ter
+*.tgd
+*.rtf
+*.json
+3DWorld/Assets/SampleScenes/Menu/Scripts/MenuSceneLoader.cs
+3DWorld/Assets/SampleScenes/Menu/Scripts/PauseMenu.cs
+3DWorld/Assets/SampleScenes/Menu/Scripts/SceneAndURLLoader.cs
+3DWorld/Assets/SampleScenes/Scripts/CameraSwitch.cs
+3DWorld/Assets/SampleScenes/Scripts/LevelReset.cs
+3DWorld/Assets/SampleScenes/Scripts/ParticleSceneControls.cs
+3DWorld/Assets/SampleScenes/Scripts/PlaceTargetWithMouse.cs
+3DWorld/Assets/SampleScenes/Scripts/SlowMoButton.cs
+3DWorld/Assets/Standard Assets/2D/Scripts/Camera2DFollow.cs
+3DWorld/Assets/Standard Assets/2D/Scripts/CameraFollow.cs
+3DWorld/Assets/Standard Assets/2D/Scripts/Platformer2DUserControl.cs
+3DWorld/Assets/Standard Assets/2D/Scripts/PlatformerCharacter2D.cs
+3DWorld/Assets/Standard Assets/2D/Scripts/Restarter.cs
+3DWorld/Assets/Standard Assets/Cameras/Scripts/AbstractTargetFollower.cs
+3DWorld/Assets/Standard Assets/Cameras/Scripts/AutoCam.cs
+3DWorld/Assets/Standard Assets/Cameras/Scripts/FreeLookCam.cs
+3DWorld/Assets/Standard Assets/Cameras/Scripts/HandHeldCam.cs
+3DWorld/Assets/Standard Assets/Cameras/Scripts/LookatTarget.cs
+3DWorld/Assets/Standard Assets/Cameras/Scripts/PivotBasedCameraRig.cs
+3DWorld/Assets/Standard Assets/Cameras/Scripts/ProtectCameraFromWallClip.cs
+3DWorld/Assets/Standard Assets/Cameras/Scripts/TargetFieldOfView.cs
+3DWorld/Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/FirstPersonController.cs
+3DWorld/Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/HeadBob.cs
+3DWorld/Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/MouseLook.cs
+3DWorld/Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/RigidbodyFirstPersonController.cs
+3DWorld/Assets/Standard Assets/Characters/RollerBall/Scripts/Ball.cs
+3DWorld/Assets/Standard Assets/Characters/RollerBall/Scripts/BallUserControl.cs
+3DWorld/Assets/Standard Assets/Characters/ThirdPersonCharacter/Scripts/AICharacterControl.cs
+3DWorld/Assets/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonCharacter.cs
+3DWorld/Assets/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonUserControl.cs
+3DWorld/Assets/Standard Assets/CrossPlatformInput/Scripts/AxisTouchButton.cs
+3DWorld/Assets/Standard Assets/CrossPlatformInput/Scripts/ButtonHandler.cs
+3DWorld/Assets/Standard Assets/CrossPlatformInput/Scripts/CrossPlatformInputManager.cs
+3DWorld/Assets/Standard Assets/CrossPlatformInput/Scripts/InputAxisScrollbar.cs
+3DWorld/Assets/Standard Assets/CrossPlatformInput/Scripts/Joystick.cs
+3DWorld/Assets/Standard Assets/CrossPlatformInput/Scripts/MobileControlRig.cs
+3DWorld/Assets/Standard Assets/CrossPlatformInput/Scripts/PlatformSpecific/MobileInput.cs
+3DWorld/Assets/Standard Assets/CrossPlatformInput/Scripts/PlatformSpecific/StandaloneInput.cs
+3DWorld/Assets/Standard Assets/CrossPlatformInput/Scripts/TiltInput.cs
+3DWorld/Assets/Standard Assets/CrossPlatformInput/Scripts/TouchPad.cs
+3DWorld/Assets/Standard Assets/CrossPlatformInput/Scripts/VirtualInput.cs
+3DWorld/Assets/Standard Assets/Editor/CrossPlatformInput/CrossPlatformInputInitialize.cs
+3DWorld/Assets/Standard Assets/Editor/Water/Water4/GerstnerDisplaceEditor.cs
+3DWorld/Assets/Standard Assets/Editor/Water/Water4/PlanarReflectionEditor.cs
+3DWorld/Assets/Standard Assets/Editor/Water/Water4/SpecularLightingEditor.cs
+3DWorld/Assets/Standard Assets/Editor/Water/Water4/WaterBaseEditor.cs
+3DWorld/Assets/Standard Assets/Editor/Water/Water4/WaterEditorUtility.cs
+3DWorld/Assets/Standard Assets/Environment/Water (Basic)/Scripts/WaterBasic.cs
+3DWorld/Assets/Standard Assets/Environment/Water/Water/Scripts/Displace.cs
+3DWorld/Assets/Standard Assets/Environment/Water/Water/Scripts/GerstnerDisplace.cs
+3DWorld/Assets/Standard Assets/Environment/Water/Water/Scripts/MeshContainer.cs
+3DWorld/Assets/Standard Assets/Environment/Water/Water/Scripts/PlanarReflection.cs
+3DWorld/Assets/Standard Assets/Environment/Water/Water/Scripts/SpecularLighting.cs
+3DWorld/Assets/Standard Assets/Environment/Water/Water/Scripts/Water.cs
+3DWorld/Assets/Standard Assets/Environment/Water/Water/Scripts/WaterBase.cs
+3DWorld/Assets/Standard Assets/Environment/Water/Water/Scripts/WaterTile.cs
+3DWorld/Assets/Standard Assets/ParticleSystems/Scripts/AfterburnerPhysicsForce.cs
+3DWorld/Assets/Standard Assets/ParticleSystems/Scripts/ExplosionFireAndDebris.cs
+3DWorld/Assets/Standard Assets/ParticleSystems/Scripts/ExplosionPhysicsForce.cs
+3DWorld/Assets/Standard Assets/ParticleSystems/Scripts/Explosive.cs
+3DWorld/Assets/Standard Assets/ParticleSystems/Scripts/ExtinguishableParticleSystem.cs
+3DWorld/Assets/Standard Assets/ParticleSystems/Scripts/FireLight.cs
+3DWorld/Assets/Standard Assets/ParticleSystems/Scripts/Hose.cs
+3DWorld/Assets/Standard Assets/ParticleSystems/Scripts/ParticleSystemMultiplier.cs
+3DWorld/Assets/Standard Assets/ParticleSystems/Scripts/SmokeParticles.cs
+3DWorld/Assets/Standard Assets/ParticleSystems/Scripts/WaterHoseParticles.cs
+3DWorld/Assets/Standard Assets/Utility/ActivateTrigger.cs
+3DWorld/Assets/Standard Assets/Utility/AlphaButtonClickMask.cs
+3DWorld/Assets/Standard Assets/Utility/AutoMobileShaderSwitch.cs
+3DWorld/Assets/Standard Assets/Utility/AutoMoveAndRotate.cs
+3DWorld/Assets/Standard Assets/Utility/CameraRefocus.cs
+3DWorld/Assets/Standard Assets/Utility/CurveControlledBob.cs
+3DWorld/Assets/Standard Assets/Utility/DragRigidbody.cs
+3DWorld/Assets/Standard Assets/Utility/DynamicShadowSettings.cs
+3DWorld/Assets/Standard Assets/Utility/EventSystemChecker.cs
+3DWorld/Assets/Standard Assets/Utility/FollowTarget.cs
+3DWorld/Assets/Standard Assets/Utility/ForcedReset.cs
+3DWorld/Assets/Standard Assets/Utility/FOVKick.cs
+3DWorld/Assets/Standard Assets/Utility/FPSCounter.cs
+3DWorld/Assets/Standard Assets/Utility/LerpControlledBob.cs
+3DWorld/Assets/Standard Assets/Utility/ObjectResetter.cs
+3DWorld/Assets/Standard Assets/Utility/ParticleSystemDestroyer.cs
+3DWorld/Assets/Standard Assets/Utility/PlatformSpecificContent.cs
+3DWorld/Assets/Standard Assets/Utility/SimpleMouseRotator.cs
+3DWorld/Assets/Standard Assets/Utility/SmoothFollow.cs
+3DWorld/Assets/Standard Assets/Utility/TimedObjectActivator.cs
+3DWorld/Assets/Standard Assets/Utility/TimedObjectDestructor.cs
+3DWorld/Assets/Standard Assets/Utility/WaypointCircuit.cs
+3DWorld/Assets/Standard Assets/Utility/WaypointProgressTracker.cs
+3DWorld/Assets/Standard Assets/Vehicles/Aircraft/Scripts/AeroplaneAiControl.cs
+3DWorld/Assets/Standard Assets/Vehicles/Aircraft/Scripts/AeroplaneAudio.cs
+3DWorld/Assets/Standard Assets/Vehicles/Aircraft/Scripts/AeroplaneController.cs
+3DWorld/Assets/Standard Assets/Vehicles/Aircraft/Scripts/AeroplaneControlSurfaceAnimator.cs
+3DWorld/Assets/Standard Assets/Vehicles/Aircraft/Scripts/AeroplanePropellerAnimator.cs
+3DWorld/Assets/Standard Assets/Vehicles/Aircraft/Scripts/AeroplaneUserControl2Axis.cs
+3DWorld/Assets/Standard Assets/Vehicles/Aircraft/Scripts/AeroplaneUserControl4Axis.cs
+3DWorld/Assets/Standard Assets/Vehicles/Aircraft/Scripts/JetParticleEffect.cs
+3DWorld/Assets/Standard Assets/Vehicles/Aircraft/Scripts/LandingGear.cs
+3DWorld/Assets/Standard Assets/Vehicles/Car/Scripts/BrakeLight.cs
+3DWorld/Assets/Standard Assets/Vehicles/Car/Scripts/CarAIControl.cs
+3DWorld/Assets/Standard Assets/Vehicles/Car/Scripts/CarAudio.cs
+3DWorld/Assets/Standard Assets/Vehicles/Car/Scripts/CarController.cs
+3DWorld/Assets/Standard Assets/Vehicles/Car/Scripts/CarSelfRighting.cs
+3DWorld/Assets/Standard Assets/Vehicles/Car/Scripts/CarUserControl.cs
+3DWorld/Assets/Standard Assets/Vehicles/Car/Scripts/Mudguard.cs
+3DWorld/Assets/Standard Assets/Vehicles/Car/Scripts/SkidTrail.cs
+3DWorld/Assets/Standard Assets/Vehicles/Car/Scripts/Suspension.cs
+3DWorld/Assets/Standard Assets/Vehicles/Car/Scripts/WheelEffects.cs
+3DWorld/Assets/Tom's Terrain Tools/2DTools/Editor/TTTools2D.cs
+3DWorld/Assets/Tom's Terrain Tools/2DTools/Scripts/Camera2DFollow.cs
+3DWorld/Assets/Tom's Terrain Tools/2DTools/Scripts/CircleMoverSample.cs
+3DWorld/Assets/Tom's Terrain Tools/Editor/ClearWaterLevel.cs
+3DWorld/Assets/Tom's Terrain Tools/Editor/IncrementalSplatmapping.cs
+3DWorld/Assets/Tom's Terrain Tools/Editor/PlaceOnTerrain.cs
+3DWorld/Assets/Tom's Terrain Tools/Editor/RandomObjectMap.cs
+3DWorld/Assets/Tom's Terrain Tools/Editor/SplatMapGenerator.cs
+3DWorld/Assets/Tom's Terrain Tools/Editor/TerrainTools.cs
+3DWorld/Assets/Tom's Terrain Tools/Example Data/Scripts/PlayerHoverController.cs
+3DWorld/Assets/Tom's Terrain Tools/Example Data/Scripts/SimpleSmoothMouseLook.cs
+3DWorld/Assets/Tom's Terrain Tools/Scripts/ForceGrassDistanceInEditor.cs
+3DWorld/Assets/Tom's Terrain Tools/Scripts/KeepOnSurface.cs
+3DWorld/Assets/Tom's Terrain Tools/Scripts/PlaceOnSurfaceAtStart.cs
+3DWorld/Assets/Tom's Terrain Tools/Scripts/SpawnInArea.cs
+3DWorld/Assets/Tom's Terrain Tools/Scripts/TerrainQualitySettings.cs
+3DWorld/Assets/Tom's Terrain Tools/Scripts/TreeExplosion.cs
