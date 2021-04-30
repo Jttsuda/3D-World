@@ -219,3 +219,38 @@ crashlytics-build.properties
 3DWorld/Assets/Tom's Terrain Tools/Scripts/SpawnInArea.cs
 3DWorld/Assets/Tom's Terrain Tools/Scripts/TerrainQualitySettings.cs
 3DWorld/Assets/Tom's Terrain Tools/Scripts/TreeExplosion.cs
+3DWorld/Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark03.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark04.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/CameraController.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/ChatController.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/DropdownSample.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/EnvMapAnimator.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/ObjectSpin.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/ShaderPropAnimator.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/SimpleScript.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/SkewTextExample.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/TeleType.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/TextConsoleSimulator.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshSpawner.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_DigitValidator.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_ExampleScript_01.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_FrameRateCounter.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_PhoneNumberValidator.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_TextEventCheck.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_TextEventHandler.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_TextInfoDebugTool.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_TextSelector_A.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_TextSelector_B.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_UiFrameRateCounter.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/TMPro_InstructionOverlay.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/VertexColorCycler.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/VertexJitter.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/VertexShakeA.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/VertexShakeB.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/VertexZoom.cs
+3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/WarpTextExample.cs

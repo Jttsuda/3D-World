@@ -29,6 +29,13 @@ public class ThirdPersonMovement : MonoBehaviour
     public float turnSmoothTime = .01f;
     float turnSmoothVelocity;
 
+    private void Start()
+    {
+    // Disable Mouse Cursor
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
