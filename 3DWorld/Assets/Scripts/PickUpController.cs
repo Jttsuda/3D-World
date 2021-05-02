@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PickUpController : MonoBehaviour
 {
-
     public BowScript bowScript;
     public Rigidbody rb;
     public BoxCollider coll;

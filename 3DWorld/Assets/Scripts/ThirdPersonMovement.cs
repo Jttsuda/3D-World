@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ThirdPersonMovement : MonoBehaviour
 {
-
     [SerializeField]
     private CharacterController controller;
     [SerializeField]
@@ -23,17 +22,29 @@ public class ThirdPersonMovement : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
 
-    public Transform cam;
-
 
     public float turnSmoothTime = .01f;
     float turnSmoothVelocity;
 
+    public Transform cam;
+
+    // Aiming
+    public Animator anim;
+    public Transform playerBody;
+    public float aimSensitivity = 50f;
+
     private void Start()
     {
-    // Disable Mouse Cursor
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        // Cap FPS
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
+
+        // Disable Mouse Cursor
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+
+        // Aiming
+        //anim = anim.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -42,44 +53,46 @@ public class ThirdPersonMovement : MonoBehaviour
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0)
-        {
             velocity.y = -2f;
-        }
+
         // Free Fall: y = 1/2g * t^2
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
-        // Moving The Player
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
-        if (direction.magnitude >= 0.1)
+        if (direction.magnitude >= 0.1 && !Input.GetButton("Aim"))
         {
+            // Moving The Player
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
-            // Sprinting
-            if (Input.GetButtonDown("Sprint") && isGrounded)
-            {
-                speed = 20f;
-            }
-            if (Input.GetButtonUp("Sprint"))
-            {
-                speed = 6f;
-            }
-
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
+        }
+        else if (Input.GetButton("Aim"))
+        {
+            // Aiming
+            float mouseX = Input.GetAxis("Mouse X") * aimSensitivity * Time.deltaTime;
+            playerBody.Rotate(Vector3.up * mouseX);
+
+            Vector3 move = transform.right * horizontal + transform.forward * vertical;
+            controller.Move(move * speed * Time.deltaTime);
         }
 
         // Jumping Equation
         if (Input.GetButtonDown("Jump") && isGrounded)
-        {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        }
 
+        // Sprinting
+        if (Input.GetButtonDown("Sprint") && isGrounded)
+            speed = 20f;
+        if (Input.GetButtonUp("Sprint"))
+            speed = 6f;
 
     }
 }
