@@ -1,63 +1,50 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BowScript : MonoBehaviour
 {
     public Camera cam;
-    public GameObject player;
-
-    //public KeyCode fireButton;
-
     public Transform spawn;
     public Rigidbody arrowObj;
 
-    //TEST - Range is Optional
-    public float damage = 10f;
-    public float range = 100f;
+    // Range is Optional
+    public float range = 70f;
+    public RectTransform crosshair;
+    public Image uiDot;
 
 
-    //draw, release, cancel
     void Update()
     {
 
-        if (Input.GetButtonDown("Fire1") && Input.GetButton("Aim"))
+        if (Input.GetButton("Aim"))
         {
-
-            Shoot();
-
-            //release
-            //Rigidbody go = Instantiate(arrowObj, spawn.position, Quaternion.identity) as Rigidbody;
-            //go.velocity = transform.forward * -160f;
-
-
-
-            //go.velocity = player.transform.forward * 100f;
-            //go.velocity = cam.transform.forward * 60f;
-            //Rigidbody arrow = Instantiate(arrowObj, spawn.position, Quaternion.identity) as Rigidbody;
-            //arrow.AddForce(spawn.forward * _charge, ForceMode.Impulse);
-            //_charge = 0;
-
+            uiDot.enabled = true;
+            RaycastHit hit;
+            if (Physics.Raycast(spawn.position, cam.transform.forward, out hit, range))
+            {
+                if(hit.transform.root.tag != "Arrow")
+                    crosshair.position = cam.WorldToScreenPoint(hit.point);
+            }
+            else
+            {
+                crosshair.position = new Vector3(Screen.width * 0.5f - 7, Screen.height * 0.5f - 7, 0);
+            }
+        }
+        if (Input.GetButtonUp("Aim"))
+        {
+            uiDot.enabled = false;
         }
 
+        if (Input.GetButtonDown("Fire1") && Input.GetButton("Aim"))
+            Shoot();
 
     }
 
     void Shoot()
     {
-
-        RaycastHit hit;
-        if (Physics.Raycast(spawn.position, cam.transform.forward, out hit, range))
-        {
-            //Debug.Log(hit.transform.name);
-            //Debug.Log(hit.transform.position);
-
-        }
         Rigidbody go = Instantiate(arrowObj, spawn.position, Quaternion.identity) as Rigidbody;
-        go.velocity = cam.transform.forward * 150f;
-
+        go.velocity = cam.transform.forward * 40f;
     }
-
 
 
 }

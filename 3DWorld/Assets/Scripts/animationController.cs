@@ -13,6 +13,7 @@ public class animationController : MonoBehaviour
 
     //TEST
     public Rig rigLayer;
+    public RigBuilder warriorRigs;
 
 
     // Start is called before the first frame update
@@ -64,17 +65,27 @@ public class animationController : MonoBehaviour
 
 
         // Aiming Bow
-        if (Input.GetButtonDown("Aim"))
+        if (Input.GetButton("Aim"))
         {
             animator.SetTrigger("Aiming");
             animator.SetBool(isAimingHash, true);
-            rigLayer.weight = 0.5f;
+
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("AimingIdle"))
+            {
+                //warriorRigs.enabled = true;
+                if (rigLayer.weight < 1f)
+                    rigLayer.weight += 4 * Time.deltaTime;
+            }
+
+
         }
-        if (Input.GetButtonUp("Aim"))
+        if (!Input.GetButton("Aim") && isAiming == true)
         {
             animator.ResetTrigger("Aiming");
             animator.SetBool(isAimingHash, false);
+
             rigLayer.weight = 0;
+            //warriorRigs.enabled = false;
         }
 
 

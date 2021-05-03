@@ -19,14 +19,10 @@ public class ArrowScript : MonoBehaviour
     {
         timer += Time.deltaTime;
         if(timer >= lifeTimer)
-        {
             Destroy(gameObject);
-        }
         if (!hitSomething)
-        {
-        transform.rotation = Quaternion.LookRotation(myBody.velocity);
+            transform.rotation = Quaternion.LookRotation(myBody.velocity);
 
-        }
     }
 
     private void OnCollisionEnter(Collision collision)
