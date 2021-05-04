@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ArrowScript : MonoBehaviour
@@ -29,9 +27,8 @@ public class ArrowScript : MonoBehaviour
     {
         if(collision.collider.tag != "Arrow" && collision.collider.tag != "Player")
         {
-        hitSomething = true;
-        Stick();
-
+            hitSomething = true;
+            Stick();
         }
     }
 

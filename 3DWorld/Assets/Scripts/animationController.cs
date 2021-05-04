@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 
@@ -11,9 +9,8 @@ public class animationController : MonoBehaviour
     int isRunningHash;
     int isAimingHash;
 
-    //TEST
+    // Aiming Animation Rigging
     public Rig rigLayer;
-    public RigBuilder warriorRigs;
 
 
     // Start is called before the first frame update
@@ -53,7 +50,7 @@ public class animationController : MonoBehaviour
         // Sprinting
         if (!isrunning && isWalking && runPressed)
             animator.SetBool(isRunningHash, true);
-        if (isrunning && (forwardPressed == 0 || rightPressed == 0) && !runPressed)
+        if ((isrunning && !runPressed) || (forwardPressed == 0 && rightPressed == 0))
             animator.SetBool(isRunningHash, false);
 
 
@@ -65,27 +62,25 @@ public class animationController : MonoBehaviour
 
 
         // Aiming Bow
-        if (Input.GetButton("Aim"))
+        if (Input.GetAxis("Aim") == 1)
         {
             animator.SetTrigger("Aiming");
             animator.SetBool(isAimingHash, true);
 
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("AimingIdle"))
             {
-                //warriorRigs.enabled = true;
                 if (rigLayer.weight < 1f)
-                    rigLayer.weight += 4 * Time.deltaTime;
+                    rigLayer.weight += 2f * Time.deltaTime;
             }
 
 
         }
-        if (!Input.GetButton("Aim") && isAiming == true)
+        if (Input.GetAxis("Aim") == -1 && isAiming == true)
         {
             animator.ResetTrigger("Aiming");
             animator.SetBool(isAimingHash, false);
 
             rigLayer.weight = 0;
-            //warriorRigs.enabled = false;
         }
 
 

@@ -16,7 +16,7 @@ public class BowScript : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetButton("Aim"))
+        if (Input.GetAxis("Aim") == 1)
         {
             uiDot.enabled = true;
             RaycastHit hit;
@@ -30,12 +30,12 @@ public class BowScript : MonoBehaviour
                 crosshair.position = new Vector3(Screen.width * 0.5f - 7, Screen.height * 0.5f - 7, 0);
             }
         }
-        if (Input.GetButtonUp("Aim"))
+        else if (!Input.GetButton("Aim") && uiDot.enabled == true)
         {
             uiDot.enabled = false;
         }
 
-        if (Input.GetButtonDown("Fire1") && Input.GetButton("Aim"))
+        if (Input.GetButtonDown("Fire1") && Input.GetAxis("Aim") == 1)
             Shoot();
 
     }

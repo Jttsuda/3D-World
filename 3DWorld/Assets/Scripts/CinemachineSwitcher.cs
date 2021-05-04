@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
@@ -12,7 +10,7 @@ public class CinemachineSwitcher : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Aim") || Input.GetButtonUp("Aim"))
+        if ((Input.GetAxis("Aim") == 1 && thirdPerson) || (Input.GetAxis("Aim") == -1 && !thirdPerson))
         {
             SwitchPriority();
         }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ThirdPersonMovement : MonoBehaviour
@@ -11,7 +9,7 @@ public class ThirdPersonMovement : MonoBehaviour
     [SerializeField]
     private float gravity = -9.81f;
     [SerializeField]
-    private float jumpHeight = 1.5f;
+    private float jumpHeight = 2f;
     [SerializeField]
     private Transform groundCheck;
     [SerializeField]
@@ -42,7 +40,6 @@ public class ThirdPersonMovement : MonoBehaviour
         //Cursor.visible = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -60,24 +57,25 @@ public class ThirdPersonMovement : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
-        if (direction.magnitude >= 0.1 && !Input.GetButton("Aim"))
+        if (direction.magnitude >= 0.1 && Input.GetAxis("Aim") == -1)
         {
             MoveThirdPerson(direction);
         }
-        else if (Input.GetButton("Aim"))
+        else if (Input.GetAxis("Aim") == 1)
         {
             AimingMovement(horizontal, vertical);
         }
 
 
+
         // Jumping
         if (Input.GetButtonDown("Jump") && isGrounded)
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
 
         // Sprinting
         if (Input.GetButtonDown("Sprint") && isGrounded)
             speed = 18f;
-        if (Input.GetButtonUp("Sprint"))
+        else if (Input.GetButtonUp("Sprint"))
             speed = 6f;
 
     }
