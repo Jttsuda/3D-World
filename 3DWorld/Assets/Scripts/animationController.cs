@@ -12,12 +12,10 @@ public class animationController : MonoBehaviour
     // Aiming Animation Rigging
     public Rig rigLayer;
 
-
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
-
 
         // Increases Performance
         isWalkingHash = Animator.StringToHash("isWalking");
@@ -70,7 +68,7 @@ public class animationController : MonoBehaviour
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("AimingIdle"))
             {
                 if (rigLayer.weight < 1f)
-                    rigLayer.weight += 2f * Time.deltaTime;
+                    rigLayer.weight += 3f * Time.deltaTime;
             }
 
 

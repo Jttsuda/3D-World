@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
-    public int targetFrameRate = 60;
     public float mouseSensitivity = 50f;
     public Transform playerBody;
     float xRotation = 0f;
@@ -13,10 +10,8 @@ public class MouseLook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = targetFrameRate;
+/*        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;*/
 
     }
 

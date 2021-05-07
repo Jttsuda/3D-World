@@ -254,3 +254,10 @@ crashlytics-build.properties
 3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/VertexShakeB.cs
 3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/VertexZoom.cs
 3DWorld/Assets/TextMesh Pro/Examples & Extras/Scripts/WarpTextExample.cs
+3DWorld/Assets/Simple Crosshair Generator/Documentation/Manual.pdf
+3DWorld/Assets/Simple Crosshair Generator/Documentation/ScriptingAPI.pdf
+3DWorld/Assets/Simple Crosshair Generator/Scripts/Editor/SimpleCrosshairEditor.cs
+3DWorld/Assets/Simple Crosshair Generator/Scripts/Example/SimpleCrosshairAPIExample.cs
+3DWorld/Assets/Simple Crosshair Generator/Scripts/Example/Utility/DisableOnPlay.cs
+3DWorld/Assets/Simple Crosshair Generator/Scripts/SimpleCrosshair.cs
+3DWorld/Assets/ColorSkies/Demo/Scripts/SkyboxChanger.cs

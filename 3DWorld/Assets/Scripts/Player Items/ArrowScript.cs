@@ -7,6 +7,9 @@ public class ArrowScript : MonoBehaviour
     private float timer;
     private bool hitSomething = false;
 
+    //TEST
+    public float damage = 10f;
+
     private void Start()
     {
         myBody = GetComponent<Rigidbody>();
@@ -29,6 +32,9 @@ public class ArrowScript : MonoBehaviour
         {
             hitSomething = true;
             Stick();
+
+            // Make Arrow Child of Col Obj
+            myBody.transform.parent = collision.collider.transform;
         }
     }
 

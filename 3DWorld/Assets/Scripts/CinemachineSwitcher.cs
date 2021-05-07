@@ -24,15 +24,22 @@ public class CinemachineSwitcher : MonoBehaviour
             thirdPersonCamera.Priority = 0;
             AimingCamera.Priority = 1;
 
-            thirdPersonCamera.m_RecenterToTargetHeading.m_enabled = true;
+            Invoke("ThirdPersonCamFollow", 1.0f);
+            //thirdPersonCamera.m_RecenterToTargetHeading.m_enabled = true;
         }
         else
         {
             thirdPersonCamera.Priority = 1;
             AimingCamera.Priority = 0;
 
-            thirdPersonCamera.m_RecenterToTargetHeading.m_enabled = false;
+            ThirdPersonCamFollow();
+            //thirdPersonCamera.m_RecenterToTargetHeading.m_enabled = false;
         }
         thirdPerson = !thirdPerson;
+    }
+
+    private void ThirdPersonCamFollow()
+    {
+        thirdPersonCamera.m_RecenterToTargetHeading.m_enabled = !thirdPersonCamera.m_RecenterToTargetHeading.m_enabled;
     }
 }
