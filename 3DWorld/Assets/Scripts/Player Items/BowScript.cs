@@ -8,11 +8,12 @@ public class BowScript : MonoBehaviour
     public Rigidbody arrowObj;
 
     // Range is Optional
-    public float range = 70f;
+    public float range = 100f;
     public RectTransform crosshair;
     public Image uiDot;
     public SimpleCrosshair script;
 
+    private int gapIncrement = 40;
 
     void Update()
     {
@@ -20,25 +21,25 @@ public class BowScript : MonoBehaviour
         if (Input.GetAxis("Aim") == 1)
         {
             uiDot.enabled = true;
-            RaycastHit hit;
-            if (Physics.Raycast(spawn.position, cam.transform.forward, out hit, range))
+            if (Physics.Raycast(spawn.position, cam.transform.forward, out RaycastHit hit, range))
             {
                 if(!hit.transform.root.CompareTag("Arrow"))
                 {
                     crosshair.position = cam.WorldToScreenPoint(hit.point);
-                    if (script.GetGap() == 40)
+                    if (gapIncrement > 5)
                     {
-                        script.SetGap(5, true);
-
+                        gapIncrement -= 1;
+                        script.SetGap(gapIncrement, true);
                     }
                 }
             }
             else
             {
                 crosshair.position = new Vector3(Screen.width * 0.5f - 7, Screen.height * 0.5f - 7, 0);
-                if (script.GetGap() == 5)
+                if (gapIncrement < 40)
                 {
-                    script.SetGap(40, true);
+                    gapIncrement += 1;
+                    script.SetGap(gapIncrement, true);
 
                 }
             }
@@ -56,7 +57,7 @@ public class BowScript : MonoBehaviour
     void Shoot()
     {
         Rigidbody go = Instantiate(arrowObj, spawn.position, Quaternion.identity) as Rigidbody;
-        go.velocity = cam.transform.forward * 40f;
+        go.velocity = cam.transform.forward * 25f;
     }
 
 

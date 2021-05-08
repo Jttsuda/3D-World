@@ -3,12 +3,10 @@ using UnityEngine;
 public class ArrowScript : MonoBehaviour
 {
     Rigidbody myBody;
-    private float lifeTimer = 2f;
+    private readonly float lifeTimer = 2f;
     private float timer;
     private bool hitSomething = false;
 
-    //TEST
-    public float damage = 10f;
 
     private void Start()
     {
@@ -28,13 +26,23 @@ public class ArrowScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.tag != "Arrow" && collision.collider.tag != "Player")
+        if (!collision.collider.CompareTag("Arrow") && !collision.collider.CompareTag("Player"))
         {
             hitSomething = true;
+            myBody.transform.parent = collision.collider.transform;
             Stick();
 
-            // Make Arrow Child of Col Obj
-            myBody.transform.parent = collision.collider.transform;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            hitSomething = true;
+            myBody.transform.parent = other.transform;
+            Stick();
+
         }
     }
 

@@ -4,12 +4,11 @@ public class SkeletonParts : MonoBehaviour
 {
     public SkeletonEnemy enemyHealth;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.collider.tag == "Arrow")
+        if (other.CompareTag("Arrow"))
         {
             enemyHealth.currentHealth -= 30f;
-            Debug.Log(enemyHealth.currentHealth);
         }
     }
 

@@ -261,3 +261,106 @@ crashlytics-build.properties
 3DWorld/Assets/Simple Crosshair Generator/Scripts/Example/Utility/DisableOnPlay.cs
 3DWorld/Assets/Simple Crosshair Generator/Scripts/SimpleCrosshair.cs
 3DWorld/Assets/ColorSkies/Demo/Scripts/SkyboxChanger.cs
+3DWorld/Assets/Scripts3rdParty/Simple Crosshair Generator/Documentation/Manual.pdf
+3DWorld/Assets/Scripts3rdParty/Simple Crosshair Generator/Documentation/ScriptingAPI.pdf
+3DWorld/Assets/Scripts3rdParty/Simple Crosshair Generator/Scripts/Editor/SimpleCrosshairEditor.cs
+3DWorld/Assets/Scripts3rdParty/Simple Crosshair Generator/Scripts/Example/SimpleCrosshairAPIExample.cs
+3DWorld/Assets/Scripts3rdParty/Simple Crosshair Generator/Scripts/Example/Utility/DisableOnPlay.cs
+3DWorld/Assets/Scripts3rdParty/Simple Crosshair Generator/Scripts/SimpleCrosshair.cs
+3DWorld/Assets/Tools/Standard Assets/CrossPlatformInput/Scripts/AxisTouchButton.cs
+3DWorld/Assets/Tools/Standard Assets/CrossPlatformInput/Scripts/ButtonHandler.cs
+3DWorld/Assets/Tools/Standard Assets/CrossPlatformInput/Scripts/CrossPlatformInputManager.cs
+3DWorld/Assets/Tools/Standard Assets/CrossPlatformInput/Scripts/InputAxisScrollbar.cs
+3DWorld/Assets/Tools/Standard Assets/CrossPlatformInput/Scripts/Joystick.cs
+3DWorld/Assets/Tools/Standard Assets/CrossPlatformInput/Scripts/MobileControlRig.cs
+3DWorld/Assets/Tools/Standard Assets/CrossPlatformInput/Scripts/PlatformSpecific/MobileInput.cs
+3DWorld/Assets/Tools/Standard Assets/CrossPlatformInput/Scripts/PlatformSpecific/StandaloneInput.cs
+3DWorld/Assets/Tools/Standard Assets/CrossPlatformInput/Scripts/TiltInput.cs
+3DWorld/Assets/Tools/Standard Assets/CrossPlatformInput/Scripts/TouchPad.cs
+3DWorld/Assets/Tools/Standard Assets/CrossPlatformInput/Scripts/VirtualInput.cs
+3DWorld/Assets/Tools/Standard Assets/Editor/CrossPlatformInput/CrossPlatformInputInitialize.cs
+3DWorld/Assets/Tools/Standard Assets/ParticleSystems/Scripts/AfterburnerPhysicsForce.cs
+3DWorld/Assets/Tools/Standard Assets/ParticleSystems/Scripts/ExplosionFireAndDebris.cs
+3DWorld/Assets/Tools/Standard Assets/ParticleSystems/Scripts/ExplosionPhysicsForce.cs
+3DWorld/Assets/Tools/Standard Assets/ParticleSystems/Scripts/Explosive.cs
+3DWorld/Assets/Tools/Standard Assets/ParticleSystems/Scripts/ExtinguishableParticleSystem.cs
+3DWorld/Assets/Tools/Standard Assets/ParticleSystems/Scripts/FireLight.cs
+3DWorld/Assets/Tools/Standard Assets/ParticleSystems/Scripts/Hose.cs
+3DWorld/Assets/Tools/Standard Assets/ParticleSystems/Scripts/ParticleSystemMultiplier.cs
+3DWorld/Assets/Tools/Standard Assets/ParticleSystems/Scripts/SmokeParticles.cs
+3DWorld/Assets/Tools/Standard Assets/ParticleSystems/Scripts/WaterHoseParticles.cs
+3DWorld/Assets/Tools/Standard Assets/Utility/ActivateTrigger.cs
+3DWorld/Assets/Tools/Standard Assets/Utility/AlphaButtonClickMask.cs
+3DWorld/Assets/Tools/Standard Assets/Utility/AutoMobileShaderSwitch.cs
+3DWorld/Assets/Tools/Standard Assets/Utility/AutoMoveAndRotate.cs
+3DWorld/Assets/Tools/Standard Assets/Utility/CameraRefocus.cs
+3DWorld/Assets/Tools/Standard Assets/Utility/CurveControlledBob.cs
+3DWorld/Assets/Tools/Standard Assets/Utility/DragRigidbody.cs
+3DWorld/Assets/Tools/Standard Assets/Utility/DynamicShadowSettings.cs
+3DWorld/Assets/Tools/Standard Assets/Utility/EventSystemChecker.cs
+3DWorld/Assets/Tools/Standard Assets/Utility/FollowTarget.cs
+3DWorld/Assets/Tools/Standard Assets/Utility/ForcedReset.cs
+3DWorld/Assets/Tools/Standard Assets/Utility/FOVKick.cs
+3DWorld/Assets/Tools/Standard Assets/Utility/FPSCounter.cs
+3DWorld/Assets/Tools/Standard Assets/Utility/LerpControlledBob.cs
+3DWorld/Assets/Tools/Standard Assets/Utility/ObjectResetter.cs
+3DWorld/Assets/Tools/Standard Assets/Utility/ParticleSystemDestroyer.cs
+3DWorld/Assets/Tools/Standard Assets/Utility/PlatformSpecificContent.cs
+3DWorld/Assets/Tools/Standard Assets/Utility/SimpleMouseRotator.cs
+3DWorld/Assets/Tools/Standard Assets/Utility/SmoothFollow.cs
+3DWorld/Assets/Tools/Standard Assets/Utility/TimedObjectActivator.cs
+3DWorld/Assets/Tools/Standard Assets/Utility/TimedObjectDestructor.cs
+3DWorld/Assets/Tools/Standard Assets/Utility/WaypointCircuit.cs
+3DWorld/Assets/Tools/Standard Assets/Utility/WaypointProgressTracker.cs
+3DWorld/Assets/Tools/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/Benchmark03.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/Benchmark04.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/CameraController.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/ChatController.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/DropdownSample.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/EnvMapAnimator.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/ObjectSpin.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/ShaderPropAnimator.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/SimpleScript.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/SkewTextExample.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/TeleType.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/TextConsoleSimulator.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/TextMeshSpawner.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/TMP_DigitValidator.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/TMP_ExampleScript_01.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/TMP_FrameRateCounter.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/TMP_PhoneNumberValidator.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/TMP_TextEventCheck.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/TMP_TextEventHandler.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/TMP_TextInfoDebugTool.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/TMP_TextSelector_A.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/TMP_TextSelector_B.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/TMP_UiFrameRateCounter.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/TMPro_InstructionOverlay.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/VertexColorCycler.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/VertexJitter.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/VertexShakeA.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/VertexShakeB.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/VertexZoom.cs
+3DWorld/Assets/Tools/TextMesh Pro/Examples & Extras/Scripts/WarpTextExample.cs
+3DWorld/Assets/Tools/Tom's Terrain Tools/2DTools/Editor/TTTools2D.cs
+3DWorld/Assets/Tools/Tom's Terrain Tools/2DTools/Scripts/Camera2DFollow.cs
+3DWorld/Assets/Tools/Tom's Terrain Tools/2DTools/Scripts/CircleMoverSample.cs
+3DWorld/Assets/Tools/Tom's Terrain Tools/Editor/ClearWaterLevel.cs
+3DWorld/Assets/Tools/Tom's Terrain Tools/Editor/IncrementalSplatmapping.cs
+3DWorld/Assets/Tools/Tom's Terrain Tools/Editor/PlaceOnTerrain.cs
+3DWorld/Assets/Tools/Tom's Terrain Tools/Editor/RandomObjectMap.cs
+3DWorld/Assets/Tools/Tom's Terrain Tools/Editor/SplatMapGenerator.cs
+3DWorld/Assets/Tools/Tom's Terrain Tools/Editor/TerrainTools.cs
+3DWorld/Assets/Tools/Tom's Terrain Tools/Example Data/Scripts/PlayerHoverController.cs
+3DWorld/Assets/Tools/Tom's Terrain Tools/Example Data/Scripts/SimpleSmoothMouseLook.cs
+3DWorld/Assets/Tools/Tom's Terrain Tools/Scripts/ForceGrassDistanceInEditor.cs
+3DWorld/Assets/Tools/Tom's Terrain Tools/Scripts/KeepOnSurface.cs
+3DWorld/Assets/Tools/Tom's Terrain Tools/Scripts/PlaceOnSurfaceAtStart.cs
+3DWorld/Assets/Tools/Tom's Terrain Tools/Scripts/SpawnInArea.cs
+3DWorld/Assets/Tools/Tom's Terrain Tools/Scripts/TerrainQualitySettings.cs
+3DWorld/Assets/Tools/Tom's Terrain Tools/Scripts/TreeExplosion.cs

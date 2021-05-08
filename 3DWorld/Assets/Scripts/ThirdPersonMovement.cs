@@ -27,7 +27,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     // Aiming Movement
     public Transform playerBody;
-    public float aimSensitivity = 100f;
+    public float aimSensitivity = 50f;
 
     private void Start()
     {
@@ -94,7 +94,6 @@ public class ThirdPersonMovement : MonoBehaviour
     private void AimingMovement(float horizontal, float vertical)
     {
         float mouseX = Input.GetAxis("Mouse X") * aimSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * aimSensitivity * Time.deltaTime;
         playerBody.Rotate(Vector3.up * mouseX);
 
         Vector3 move = transform.right * horizontal + transform.forward * vertical;

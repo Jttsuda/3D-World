@@ -51,7 +51,8 @@ public class PickUpController : MonoBehaviour
         //Make weapon a child of the BowContainer and move it to default position
         transform.SetParent(equippedContainer);
         transform.localPosition = Vector3.zero;
-        transform.localRotation = Quaternion.Euler(Vector3.zero);
+        //transform.localRotation = Quaternion.Euler(Vector3.zero);
+        transform.localRotation = Quaternion.Euler(new Vector3(4.36f, -11.74f, 2.8f));
         transform.localScale = Vector3.one;
 
         //Make RigidBody Kinematic and BoxCollider a trigger
