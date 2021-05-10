@@ -28,7 +28,7 @@ public class BowScript : MonoBehaviour
                     crosshair.position = cam.WorldToScreenPoint(hit.point);
                     if (gapIncrement > 5)
                     {
-                        gapIncrement -= 1;
+                        gapIncrement -= 35;
                         script.SetGap(gapIncrement, true);
                     }
                 }
@@ -38,7 +38,7 @@ public class BowScript : MonoBehaviour
                 crosshair.position = new Vector3(Screen.width * 0.5f - 7, Screen.height * 0.5f - 7, 0);
                 if (gapIncrement < 40)
                 {
-                    gapIncrement += 1;
+                    gapIncrement += 35;
                     script.SetGap(gapIncrement, true);
 
                 }
@@ -57,7 +57,7 @@ public class BowScript : MonoBehaviour
     void Shoot()
     {
         Rigidbody go = Instantiate(arrowObj, spawn.position, Quaternion.identity) as Rigidbody;
-        go.velocity = cam.transform.forward * 25f;
+        go.velocity = cam.transform.forward * 40f;
     }
 
 

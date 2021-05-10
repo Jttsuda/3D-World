@@ -8,7 +8,7 @@ public class SkeletonParts : MonoBehaviour
     {
         if (other.CompareTag("Arrow"))
         {
-            enemyHealth.currentHealth -= 30f;
+            enemyHealth.currentHealth -= 10f;
         }
     }
 
