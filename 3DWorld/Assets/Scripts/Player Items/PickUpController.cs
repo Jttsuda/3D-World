@@ -5,18 +5,19 @@ public class PickUpController : MonoBehaviour
     public BowScript bowScript;
     public Rigidbody rb;
     public BoxCollider coll;
-    public Transform player, equippedContainer, Cam;
-
+    private Transform player, equippedContainer, Cam;
     public float pickUpRange;
-    public float dropForwardForce, dropUpwardForce;
-
     public bool equipped;
     public static bool slotFull;
 
 
+    //NEW CODE
+    private Inventory inventory;
+    public GameObject itemButton;
+
+
     private void Start()
     {
-        //Setup
         if (!equipped)
         {
             bowScript.enabled = false;
@@ -30,61 +31,76 @@ public class PickUpController : MonoBehaviour
             coll.isTrigger = true;
             slotFull = true;
         }
+
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        equippedContainer = GameObject.FindGameObjectWithTag("LeftHandEquipped").transform;
+        Cam = GameObject.FindGameObjectWithTag("MainCamera").transform;
     }
 
-    // Update is called once per frame
+
     private void Update()
     {
-        //Check if Player is in range and "E" is pressed
         Vector3 distanceToPlayer = player.position - transform.position;
-        if (!equipped && distanceToPlayer.magnitude <= pickUpRange && Input.GetButtonDown("Interact") && !slotFull) PickUp();
 
-        //Drop if equipped and "Q" is pressed
+        if (!equipped && distanceToPlayer.magnitude <= pickUpRange && Input.GetButtonDown("Interact")) PickUp();
         if (equipped && Input.GetButtonDown("Drop")) Drop();
     }
 
+
     private void PickUp()
     {
-        equipped = true;
-        slotFull = true;
+        for (int i = 0; i < inventory.slots.Length; i++)
+        {
+            if (inventory.isFull[i] == false)
+            {
+                inventory.isFull[i] = true;
+                Instantiate(itemButton, inventory.slots[i].transform, false);
 
-        //Make weapon a child of the BowContainer and move it to default position
-        transform.SetParent(equippedContainer);
-        transform.localPosition = Vector3.zero;
-        //transform.localRotation = Quaternion.Euler(Vector3.zero);
-        transform.localRotation = Quaternion.Euler(new Vector3(4.36f, -11.74f, 2.8f));
-        transform.localScale = Vector3.one;
+                // Player Not Currently Holding Anything
+                if (!slotFull)
+                {
+                    equipped = true;
+                    slotFull = true;
+                    transform.SetParent(equippedContainer);
+                    transform.localPosition = Vector3.zero;
 
-        //Make RigidBody Kinematic and BoxCollider a trigger
-        rb.isKinematic = true;
-        coll.isTrigger = true;
+                    //transform.localRotation = Quaternion.Euler(Vector3.zero);
+                    transform.localRotation = Quaternion.Euler(new Vector3(4.36f, -11.74f, 2.8f));
+                    rb.isKinematic = true;
+                    coll.isTrigger = true;
+                    bowScript.enabled = true;
+                }
+                else if (slotFull)
+                {
+                    Destroy(gameObject);
+                }
 
-        //Enable Script
-        bowScript.enabled = true;
+                break;
+            }
+        }
+
     }
+
+
     private void Drop()
     {
         equipped = false;
         slotFull = false;
-
-        //Set parent to null
         transform.SetParent(null);
-
-        //Make RigidBody not Kinematic and BoxCollider normal
         rb.isKinematic = false;
         coll.isTrigger = false;
 
         //Gun carries momentum of player
         rb.velocity = player.GetComponent<Rigidbody>().velocity;
 
-        //AddForce
-        rb.AddForce(Cam.forward * dropForwardForce, ForceMode.Impulse);
-        rb.AddForce(Cam.up * dropUpwardForce, ForceMode.Impulse);
+        rb.AddForce(Cam.forward * 2, ForceMode.Impulse);
+        rb.AddForce(Cam.up * 2, ForceMode.Impulse);
+
         //Add random rotation
         float random = Random.Range(-1f, 1f);
         rb.AddTorque(new Vector3(random, random, random) * 10);
 
-        //Disable Script
         bowScript.enabled = false;
     }
 }

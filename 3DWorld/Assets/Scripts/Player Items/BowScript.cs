@@ -3,17 +3,26 @@ using UnityEngine.UI;
 
 public class BowScript : MonoBehaviour
 {
-    public Camera cam;
+    private Camera cam;
     public Transform spawn;
     public Rigidbody arrowObj;
 
     // Range is Optional
-    public float range = 100f;
-    public RectTransform crosshair;
-    public Image uiDot;
+    private float range = 100f;
+    private RectTransform crosshair;
+    private Image uiDot;
     public SimpleCrosshair script;
 
     private int gapIncrement = 40;
+
+
+    private void Start()
+    {
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        crosshair = GameObject.FindGameObjectWithTag("Crosshair").GetComponent<RectTransform>();
+        uiDot = GameObject.FindGameObjectWithTag("Crosshair").GetComponent<Image>();
+    }
+
 
     void Update()
     {
