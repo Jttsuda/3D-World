@@ -364,3 +364,6 @@ crashlytics-build.properties
 3DWorld/Assets/Tools/Tom's Terrain Tools/Scripts/SpawnInArea.cs
 3DWorld/Assets/Tools/Tom's Terrain Tools/Scripts/TerrainQualitySettings.cs
 3DWorld/Assets/Tools/Tom's Terrain Tools/Scripts/TreeExplosion.cs
+3DWorld/Assets/Scenes/MainScene/Lightmap-0_comp_light.exr
+3DWorld/Assets/Scenes/MainScene/Lightmap-1_comp_light.exr
+3DWorld/Assets/Scenes/MainScene/ReflectionProbe-0.exr

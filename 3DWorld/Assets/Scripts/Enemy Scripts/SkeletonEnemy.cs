@@ -5,24 +5,23 @@ public class SkeletonEnemy : MonoBehaviour
 {
     Vector3 spawnLocation;
     Animator animator;
-    public Transform player;
+    private Transform player;
     public float maxHealth = 20f;
     public float currentHealth;
     public float agroRange = 20f;
     public float combatRange = 2f;
     int isWalkingHash;
 
-
     //Patrolling
     public NavMeshAgent agent;
     public LayerMask groundLayer;
     public Vector3 walkPoint;
     public float walkPointRange = 10f;
-    public float rotationSpeed = 3f;
     bool walkPointSet;
     float randomZ;
     float randomX;
 
+    float walkTimer;
 
     private void Awake()
     {
@@ -48,6 +47,12 @@ public class SkeletonEnemy : MonoBehaviour
             if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Death"))
                 Invoke(nameof(DestroyObject), 1f);
         }
+
+        // Checking if Stuck
+        if (walkTimer > 10f)
+        {
+            walkPointSet = false;
+        }
     }
 
     private void FixedUpdate()
@@ -58,7 +63,6 @@ public class SkeletonEnemy : MonoBehaviour
         if (distanceToPlayer.magnitude > agroRange && currentHealth > 0) Patrolling();
         else if (distanceToPlayer.magnitude <= agroRange && distanceToPlayer.magnitude > combatRange && currentHealth > 0)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(distanceToPlayer), Time.deltaTime * rotationSpeed * 2f);
             agent.SetDestination(player.position);
             animator.SetBool(isWalkingHash, true);
         }
@@ -80,7 +84,7 @@ public class SkeletonEnemy : MonoBehaviour
         if (!walkPointSet) SearchWalkPoint();
         if (walkPointSet)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(distanceToWalkPoint), Time.deltaTime * rotationSpeed);
+            walkTimer += Time.deltaTime;
             agent.SetDestination(walkPoint);
             animator.SetBool(isWalkingHash, true);
         }
@@ -91,6 +95,7 @@ public class SkeletonEnemy : MonoBehaviour
         }
     }
 
+
     private void SearchWalkPoint()
     {
         randomZ = Random.Range(-walkPointRange, walkPointRange);
@@ -98,7 +103,11 @@ public class SkeletonEnemy : MonoBehaviour
         walkPoint = new Vector3(spawnLocation.x + randomX, spawnLocation.y, spawnLocation.z + randomZ);
 
         if (Physics.Raycast(walkPoint, -transform.up, 2f, groundLayer))
+        {
             walkPointSet = true;
+            walkTimer = 0f;
+
+        }
     }
 
 
