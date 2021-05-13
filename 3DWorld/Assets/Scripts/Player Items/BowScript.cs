@@ -8,10 +8,10 @@ public class BowScript : MonoBehaviour
     public Rigidbody arrowObj;
 
     // Range is Optional
-    private float range = 100f;
+    private readonly float range = 100f;
     private RectTransform crosshair;
     private Image uiDot;
-    public SimpleCrosshair script;
+    private SimpleCrosshair script;
 
     private int gapIncrement = 40;
 
@@ -21,6 +21,7 @@ public class BowScript : MonoBehaviour
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         crosshair = GameObject.FindGameObjectWithTag("Crosshair").GetComponent<RectTransform>();
         uiDot = GameObject.FindGameObjectWithTag("Crosshair").GetComponent<Image>();
+        script = GameObject.FindGameObjectWithTag("Crosshair").GetComponent<SimpleCrosshair>();
     }
 
 
@@ -65,7 +66,7 @@ public class BowScript : MonoBehaviour
 
     void Shoot()
     {
-        Rigidbody go = Instantiate(arrowObj, spawn.position, Quaternion.identity) as Rigidbody;
+        Rigidbody go = Instantiate(arrowObj, spawn.position, Quaternion.identity);
         go.velocity = cam.transform.forward * 40f;
     }
 

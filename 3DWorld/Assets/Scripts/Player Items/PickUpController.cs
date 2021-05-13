@@ -5,48 +5,42 @@ public class PickUpController : MonoBehaviour
     public BowScript bowScript;
     public Rigidbody rb;
     public BoxCollider coll;
-    private Transform player, equippedContainer, Cam;
+    private Transform player, equippedContainer;
     public float pickUpRange;
     public bool equipped;
-    public static bool slotFull;
 
-
-    //NEW CODE
     private Inventory inventory;
     public GameObject itemButton;
-
+    public LeftHandContainer leftHandFull;
 
     private void Start()
     {
         if (!equipped)
         {
-            bowScript.enabled = false;
             rb.isKinematic = false;
             coll.isTrigger = false;
+            if (bowScript != null)
+                bowScript.enabled = false;
         }
         if (equipped)
         {
-            bowScript.enabled = true;
             rb.isKinematic = true;
             coll.isTrigger = true;
-            slotFull = true;
+            if (bowScript != null)
+                bowScript.enabled = true;
         }
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         equippedContainer = GameObject.FindGameObjectWithTag("LeftHandEquipped").transform;
-        Cam = GameObject.FindGameObjectWithTag("MainCamera").transform;
+        leftHandFull = equippedContainer.GetComponent<LeftHandContainer>();
     }
-
 
     private void Update()
     {
         Vector3 distanceToPlayer = player.position - transform.position;
-
         if (!equipped && distanceToPlayer.magnitude <= pickUpRange && Input.GetButtonDown("Interact")) PickUp();
-        if (equipped && Input.GetButtonDown("Drop")) Drop();
     }
-
 
     private void PickUp()
     {
@@ -58,10 +52,10 @@ public class PickUpController : MonoBehaviour
                 Instantiate(itemButton, inventory.slots[i].transform, false);
 
                 // Player Not Currently Holding Anything
-                if (!slotFull)
+                if (!leftHandFull.LeftHandFull)
                 {
                     equipped = true;
-                    slotFull = true;
+                    leftHandFull.LeftHandFull = true;
                     transform.SetParent(equippedContainer);
                     transform.localPosition = Vector3.zero;
 
@@ -69,9 +63,14 @@ public class PickUpController : MonoBehaviour
                     transform.localRotation = Quaternion.Euler(new Vector3(4.36f, -11.74f, 2.8f));
                     rb.isKinematic = true;
                     coll.isTrigger = true;
-                    bowScript.enabled = true;
+
+                    if (bowScript != null)
+                    {
+                        bowScript.enabled = true;
+
+                    }
                 }
-                else if (slotFull)
+                else if (leftHandFull.LeftHandFull)
                 {
                     Destroy(gameObject);
                 }
@@ -83,24 +82,4 @@ public class PickUpController : MonoBehaviour
     }
 
 
-    private void Drop()
-    {
-        equipped = false;
-        slotFull = false;
-        transform.SetParent(null);
-        rb.isKinematic = false;
-        coll.isTrigger = false;
-
-        //Gun carries momentum of player
-        rb.velocity = player.GetComponent<Rigidbody>().velocity;
-
-        rb.AddForce(Cam.forward * 2, ForceMode.Impulse);
-        rb.AddForce(Cam.up * 2, ForceMode.Impulse);
-
-        //Add random rotation
-        float random = Random.Range(-1f, 1f);
-        rb.AddTorque(new Vector3(random, random, random) * 10);
-
-        bowScript.enabled = false;
-    }
 }

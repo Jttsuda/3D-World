@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Animations.Rigging;
 
 
-public class animationController : MonoBehaviour
+public class playerAnimations : MonoBehaviour
 {
     Animator animator;
     int isWalkingHash;
