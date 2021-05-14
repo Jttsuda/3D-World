@@ -1,17 +1,18 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PickUpController : MonoBehaviour
 {
     public BowScript bowScript;
     public Rigidbody rb;
     public BoxCollider coll;
-    private Transform player, equippedContainer;
+    private Transform player, LeftEquippedContainer, RightEquippedContainer;
     public float pickUpRange;
     public bool equipped;
 
     private Inventory inventory;
     public GameObject itemButton;
-    public LeftHandContainer leftHandFull;
+
 
     private void Start()
     {
@@ -32,8 +33,8 @@ public class PickUpController : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-        equippedContainer = GameObject.FindGameObjectWithTag("LeftHandEquipped").transform;
-        leftHandFull = equippedContainer.GetComponent<LeftHandContainer>();
+        LeftEquippedContainer = GameObject.FindGameObjectWithTag("LeftHandEquipped").transform;
+        RightEquippedContainer = GameObject.FindGameObjectWithTag("RightHandEquipped").transform;
     }
 
     private void Update()
@@ -49,31 +50,38 @@ public class PickUpController : MonoBehaviour
             if (inventory.isFull[i] == false)
             {
                 inventory.isFull[i] = true;
-                Instantiate(itemButton, inventory.slots[i].transform, false);
+                GameObject equippedIcon = Instantiate(itemButton, inventory.slots[i].transform, false);
 
-                // Player Not Currently Holding Anything
-                if (!leftHandFull.LeftHandFull)
+                // Check if Currently Holding Item
+                if (!inventory.HandsFull)
                 {
-                    equipped = true;
-                    leftHandFull.LeftHandFull = true;
-                    transform.SetParent(equippedContainer);
-                    transform.localPosition = Vector3.zero;
+                    //TEST
+/*                    EventSystem.current.SetSelectedGameObject(null);
+                    EventSystem.current.SetSelectedGameObject(equippedIcon);*/
 
-                    //transform.localRotation = Quaternion.Euler(Vector3.zero);
-                    transform.localRotation = Quaternion.Euler(new Vector3(4.36f, -11.74f, 2.8f));
+                    equipped = true;
+                    inventory.HandsFull = true;
                     rb.isKinematic = true;
                     coll.isTrigger = true;
 
-                    if (bowScript != null)
+                    if (transform.CompareTag("OldBow"))
                     {
+                        transform.SetParent(LeftEquippedContainer);
+                        transform.localRotation = Quaternion.Euler(new Vector3(4.36f, -11.74f, 2.8f));
+                    }
+                    else if (transform.CompareTag("OldAxe"))
+                    {
+                        transform.SetParent(RightEquippedContainer);
+                        transform.localRotation = Quaternion.Euler(new Vector3(14.5f, 298f, 268.5f));
+                    }
+
+                    transform.localPosition = Vector3.zero;
+                    if (bowScript != null)
                         bowScript.enabled = true;
 
-                    }
                 }
-                else if (leftHandFull.LeftHandFull)
-                {
+                else if (inventory.HandsFull)
                     Destroy(gameObject);
-                }
 
                 break;
             }
