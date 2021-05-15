@@ -44,8 +44,7 @@ public class SkeletonEnemy : MonoBehaviour
         {
             animator.SetBool(isWalkingHash, false);
             animator.SetTrigger("Die");
-            if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Death"))
-                Invoke(nameof(DestroyObject), 1f);
+            Invoke(nameof(DestroyObject), 1f);
         }
 
         // Checking if Stuck
@@ -53,10 +52,7 @@ public class SkeletonEnemy : MonoBehaviour
         {
             walkPointSet = false;
         }
-    }
 
-    private void FixedUpdate()
-    {
         // Moving Skeleton
         Vector3 distanceToPlayer = player.position - transform.position;
 
@@ -71,6 +67,7 @@ public class SkeletonEnemy : MonoBehaviour
             animator.SetBool(isWalkingHash, false);
         }
     }
+
 
     private void DestroyObject()
     {

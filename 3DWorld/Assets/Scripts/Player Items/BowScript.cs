@@ -67,7 +67,7 @@ public class BowScript : MonoBehaviour
     void Shoot()
     {
         Rigidbody go = Instantiate(arrowObj, spawn.position, Quaternion.identity);
-        go.velocity = cam.transform.forward * 40f;
+        go.velocity = cam.transform.forward * 60f;
     }
 
 

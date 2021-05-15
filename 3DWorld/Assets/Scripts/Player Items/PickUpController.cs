@@ -56,8 +56,8 @@ public class PickUpController : MonoBehaviour
                 if (!inventory.HandsFull)
                 {
                     //TEST
-/*                    EventSystem.current.SetSelectedGameObject(null);
-                    EventSystem.current.SetSelectedGameObject(equippedIcon);*/
+                    EventSystem.current.SetSelectedGameObject(null);
+                    EventSystem.current.SetSelectedGameObject(equippedIcon);
 
                     equipped = true;
                     inventory.HandsFull = true;

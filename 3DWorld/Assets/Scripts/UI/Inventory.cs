@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Inventory : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class Inventory : MonoBehaviour
     private Transform LeftEquippedContainer;
     private Transform RightEquippedContainer;
     private bool switchWeaponPressed = false;
-    private int nextWeapon;
+    private int nextWeapon = 0;
 
     // Implement This
     public bool HandsFull = false;
@@ -37,7 +38,7 @@ public class Inventory : MonoBehaviour
         {
             if (slots[i].transform.childCount > 0)
             {
-                GameObject itemInSlot = slots[i].GetComponentInChildren<EquipItem>().item;
+                GameObject itemInSlot = slots[i].GetComponentInChildren<DropItem>().item;
                 bool leftHandMatch = LeftEquippedContainer.childCount > 0 && itemInSlot.CompareTag(LeftEquippedContainer.GetChild(0).tag);
                 bool rightHandMatch = RightEquippedContainer.childCount > 0 && itemInSlot.CompareTag(RightEquippedContainer.GetChild(0).tag);
                 if (leftHandMatch || rightHandMatch)
@@ -56,6 +57,7 @@ public class Inventory : MonoBehaviour
         }
 
 
+        
         Debug.Log(nextWeapon);
 
         // Check if "nextWeapon" Index exists
@@ -65,11 +67,10 @@ public class Inventory : MonoBehaviour
             foreach (Transform child in RightEquippedContainer) Destroy(child.gameObject);
 
             // Get nextWeapon GameObject and Equip
-            EquipItem newWeapon = slots[nextWeapon].GetComponentInChildren<EquipItem>();
+            DropItem newWeapon = slots[nextWeapon].GetComponentInChildren<DropItem>();
             Transform equippedItem = Instantiate(newWeapon.item, LeftEquippedContainer.position, Quaternion.identity).transform;
 
 
-            // Place IF-Statement here to check what Item is being equipped
             if (equippedItem.CompareTag("OldBow"))
             {
                 equippedItem.SetParent(LeftEquippedContainer);
@@ -94,8 +95,12 @@ public class Inventory : MonoBehaviour
             heldItem.equipped = true;
 
 
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(slots[nextWeapon].transform.GetChild(0).gameObject);
+
         }
 
 
     }
+
 }
