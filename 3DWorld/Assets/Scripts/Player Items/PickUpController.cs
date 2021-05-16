@@ -67,12 +67,17 @@ public class PickUpController : MonoBehaviour
                     if (transform.CompareTag("OldBow"))
                     {
                         transform.SetParent(LeftEquippedContainer);
-                        transform.localRotation = Quaternion.Euler(new Vector3(4.36f, -11.74f, 2.8f));
+                        transform.localRotation = Quaternion.Euler(new Vector3(357.985352f, 346.495453f, 2.36139822f));
                     }
                     else if (transform.CompareTag("OldAxe"))
                     {
                         transform.SetParent(RightEquippedContainer);
                         transform.localRotation = Quaternion.Euler(new Vector3(14.5f, 298f, 268.5f));
+                    }
+                    else if (transform.CompareTag("OldSword"))
+                    {
+                        transform.SetParent(RightEquippedContainer);
+                        transform.localRotation = Quaternion.Euler(new Vector3(20.23f, 298.23f, 272.13f));
                     }
 
                     transform.localPosition = Vector3.zero;

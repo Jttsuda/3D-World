@@ -56,10 +56,6 @@ public class Inventory : MonoBehaviour
             }
         }
 
-
-        
-        Debug.Log(nextWeapon);
-
         // Check if "nextWeapon" Index exists
         if (nextWeapon >= 0 && nextWeapon < slots.Length && slots[nextWeapon].transform.childCount > 0)
         {
@@ -75,14 +71,19 @@ public class Inventory : MonoBehaviour
             {
                 equippedItem.SetParent(LeftEquippedContainer);
                 equippedItem.localPosition = Vector3.zero;
-                equippedItem.localRotation = Quaternion.Euler(new Vector3(4.36f, -11.74f, 2.8f));
-
+                equippedItem.localRotation = Quaternion.Euler(new Vector3(357.985352f, 346.495453f, 2.36139822f));
             }
             else if (equippedItem.CompareTag("OldAxe"))
             {
                 equippedItem.SetParent(RightEquippedContainer);
                 equippedItem.localPosition = Vector3.zero;
                 equippedItem.localRotation = Quaternion.Euler(new Vector3(14.5f, 298f, 268.5f));
+            }
+            else if (equippedItem.CompareTag("OldSword"))
+            {
+                equippedItem.SetParent(RightEquippedContainer);
+                equippedItem.localPosition = Vector3.zero;
+                equippedItem.localRotation = Quaternion.Euler(new Vector3(20.23f, 298.23f, 272.13f));
 
             }
 
